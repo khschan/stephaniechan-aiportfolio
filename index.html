@@ -6,76 +6,81 @@
   <title>Alex Rivera — Designer & Animator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="nav">
-    <a href="#" class="nav-logo">AR</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo">AR<span class="dot">.</span></a>
+      <nav class="navbar__links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="navbar__burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
   <main>
 
     <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero-bg">
-        <div class="hero-orb hero-orb--1"></div>
-        <div class="hero-orb hero-orb--2"></div>
-        <div class="hero-grid"></div>
-      </div>
-      <div class="hero-content">
-        <p class="hero-eyebrow fade-up">Interactive Design & Animation</p>
-        <h1 class="hero-name fade-up">Alex<br><em>Rivera</em></h1>
-        <p class="hero-tagline fade-up">Designer. Animator. Creative Thinker.</p>
-        <div class="hero-cta fade-up">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Interactive Design & Animation</p>
+        <h1 class="hero__name reveal">Alex<br/><em>Rivera</em></h1>
+        <p class="hero__tagline reveal">Designer. Animator. Creative Thinker.</p>
+        <div class="hero__cta reveal">
           <a href="#work" class="btn btn--primary">View My Work</a>
           <a href="#contact" class="btn btn--ghost">Get in Touch</a>
         </div>
       </div>
-      <div class="hero-scroll-hint">
+      <div class="hero__scroll-hint">
         <span>Scroll</span>
-        <div class="hero-scroll-line"></div>
+        <div class="hero__scroll-line"></div>
       </div>
     </section>
 
     <!-- ABOUT -->
     <section class="about section" id="about">
       <div class="container">
-        <div class="about-inner">
-          <div class="about-image reveal">
-            <div class="about-image-wrap">
-              <img src="https://placehold.co/480x560/111827/6366f1?text=Alex+Rivera" alt="Alex Rivera" />
-              <div class="about-image-accent"></div>
+        <div class="about__grid">
+          <div class="about__image-wrap reveal">
+            <div class="about__image-frame">
+              <img src="https://placehold.co/480x580/111827/6366f1?text=Alex+Rivera" alt="Alex Rivera — Designer and Animator" />
+            </div>
+            <div class="about__image-badge">
+              <span>Available for</span>
+              <strong>freelance work</strong>
             </div>
           </div>
-          <div class="about-text">
-            <p class="section-label reveal">About Me</p>
-            <h2 class="section-heading reveal">Crafting experiences<br>that <em>move</em> people.</h2>
-            <p class="about-bio reveal">I'm a multidisciplinary designer who loves bringing ideas to life through motion, interaction, and visual storytelling. Currently finishing my diploma in Interactive Design and Animation.</p>
-            <p class="about-bio reveal">I believe great design should feel inevitable — like it couldn't have been done any other way. Every project is a chance to surprise, delight, and communicate.</p>
-            <div class="about-stats reveal">
+          <div class="about__text">
+            <p class="section__label reveal">Who I Am</p>
+            <h2 class="section__heading reveal">Crafting experiences<br/>through motion<br/><em>&amp; design</em></h2>
+            <p class="about__bio reveal">I'm a multidisciplinary designer who loves bringing ideas to life through motion, interaction, and visual storytelling. Currently finishing my diploma in Interactive Design and Animation.</p>
+            <div class="about__stats reveal">
               <div class="stat">
-                <span class="stat-number">6+</span>
-                <span class="stat-label">Projects</span>
+                <span class="stat__number">6+</span>
+                <span class="stat__label">Projects</span>
               </div>
               <div class="stat">
-                <span class="stat-number">3+</span>
-                <span class="stat-label">Years Learning</span>
+                <span class="stat__number">3</span>
+                <span class="stat__label">Years Learning</span>
               </div>
               <div class="stat">
-                <span class="stat-number">7</span>
-                <span class="stat-label">Tools Mastered</span>
+                <span class="stat__number">7</span>
+                <span class="stat__label">Tools Mastered</span>
               </div>
             </div>
           </div>
@@ -86,87 +91,93 @@
     <!-- WORK -->
     <section class="work section" id="work">
       <div class="container">
-        <div class="section-header reveal">
-          <p class="section-label">Selected Work</p>
-          <h2 class="section-heading">Projects that <em>speak</em> for themselves.</h2>
+        <div class="section__header reveal">
+          <p class="section__label">Selected Work</p>
+          <h2 class="section__heading">Projects that<br/><em>speak for themselves</em></h2>
         </div>
-        <div class="projects-grid">
+        <div class="work__grid">
 
-          <article class="project-card reveal" data-index="0">
-            <div class="project-image">
-              <img src="https://placehold.co/600x420/1e1b4b/818cf8?text=Brand+Identity" alt="Brand Identity — Cafe Luna" loading="lazy" />
-              <div class="project-overlay">
-                <a href="#" class="project-link">View Project →</a>
+          <article class="card card--large reveal">
+            <div class="card__image">
+              <img src="https://placehold.co/800x500/1e1b4b/818cf8?text=Brand+Identity" alt="Brand Identity — Cafe Luna project" />
+              <div class="card__overlay">
+                <span class="card__tag">Branding</span>
+                <a href="#" class="card__link">View Project →</a>
               </div>
             </div>
-            <div class="project-info">
-              <span class="project-tag">Branding</span>
-              <h3 class="project-title">Brand Identity — Cafe Luna</h3>
+            <div class="card__info">
+              <h3>Brand Identity</h3>
+              <p>Cafe Luna</p>
             </div>
           </article>
 
-          <article class="project-card reveal" data-index="1">
-            <div class="project-image">
-              <img src="https://placehold.co/600x420/0f2a1e/34d399?text=Motion+Reel" alt="Motion Reel 2025" loading="lazy" />
-              <div class="project-overlay">
-                <a href="#" class="project-link">View Project →</a>
+          <article class="card reveal">
+            <div class="card__image">
+              <img src="https://placehold.co/600x400/0f172a/6366f1?text=Motion+Reel" alt="Motion Reel 2025" />
+              <div class="card__overlay">
+                <span class="card__tag">Motion</span>
+                <a href="#" class="card__link">View Project →</a>
               </div>
             </div>
-            <div class="project-info">
-              <span class="project-tag">Motion</span>
-              <h3 class="project-title">Motion Reel 2025</h3>
+            <div class="card__info">
+              <h3>Motion Reel 2025</h3>
+              <p>Animation</p>
             </div>
           </article>
 
-          <article class="project-card reveal" data-index="2">
-            <div class="project-image">
-              <img src="https://placehold.co/600x420/1a1a2e/f59e0b?text=UI+Fitness+App" alt="UI Concept — Fitness App" loading="lazy" />
-              <div class="project-overlay">
-                <a href="#" class="project-link">View Project →</a>
+          <article class="card reveal">
+            <div class="card__image">
+              <img src="https://placehold.co/600x400/111827/818cf8?text=Fitness+App+UI" alt="UI Concept — Fitness App" />
+              <div class="card__overlay">
+                <span class="card__tag">UI/UX</span>
+                <a href="#" class="card__link">View Project →</a>
               </div>
             </div>
-            <div class="project-info">
-              <span class="project-tag">UI Design</span>
-              <h3 class="project-title">UI Concept — Fitness App</h3>
+            <div class="card__info">
+              <h3>UI Concept</h3>
+              <p>Fitness App</p>
             </div>
           </article>
 
-          <article class="project-card reveal" data-index="3">
-            <div class="project-image">
-              <img src="https://placehold.co/600x420/1f1525/e879f9?text=3D+Character" alt="3D Character Design" loading="lazy" />
-              <div class="project-overlay">
-                <a href="#" class="project-link">View Project →</a>
+          <article class="card reveal">
+            <div class="card__image">
+              <img src="https://placehold.co/600x400/1e1b4b/a5b4fc?text=3D+Character" alt="3D Character Design" />
+              <div class="card__overlay">
+                <span class="card__tag">3D</span>
+                <a href="#" class="card__link">View Project →</a>
               </div>
             </div>
-            <div class="project-info">
-              <span class="project-tag">3D / Blender</span>
-              <h3 class="project-title">3D Character Design</h3>
+            <div class="card__info">
+              <h3>3D Character Design</h3>
+              <p>Blender</p>
             </div>
           </article>
 
-          <article class="project-card reveal" data-index="4">
-            <div class="project-image">
-              <img src="https://placehold.co/600x420/1a0f0f/f87171?text=Event+Posters" alt="Event Poster Series" loading="lazy" />
-              <div class="project-overlay">
-                <a href="#" class="project-link">View Project →</a>
+          <article class="card reveal">
+            <div class="card__image">
+              <img src="https://placehold.co/600x400/0f172a/6366f1?text=Event+Poster+Series" alt="Event Poster Series" />
+              <div class="card__overlay">
+                <span class="card__tag">Print</span>
+                <a href="#" class="card__link">View Project →</a>
               </div>
             </div>
-            <div class="project-info">
-              <span class="project-tag">Print Design</span>
-              <h3 class="project-title">Event Poster Series</h3>
+            <div class="card__info">
+              <h3>Event Poster Series</h3>
+              <p>Graphic Design</p>
             </div>
           </article>
 
-          <article class="project-card reveal" data-index="5">
-            <div class="project-image">
-              <img src="https://placehold.co/600x420/0f1a2a/38bdf8?text=Infographic" alt="Interactive Infographic" loading="lazy" />
-              <div class="project-overlay">
-                <a href="#" class="project-link">View Project →</a>
+          <article class="card reveal">
+            <div class="card__image">
+              <img src="https://placehold.co/600x400/111827/818cf8?text=Interactive+Infographic" alt="Interactive Infographic" />
+              <div class="card__overlay">
+                <span class="card__tag">Interactive</span>
+                <a href="#" class="card__link">View Project →</a>
               </div>
             </div>
-            <div class="project-info">
-              <span class="project-tag">Interactive</span>
-              <h3 class="project-title">Interactive Infographic</h3>
+            <div class="card__info">
+              <h3>Interactive Infographic</h3>
+              <p>HTML/CSS/JS</p>
             </div>
           </article>
 
@@ -177,52 +188,33 @@
     <!-- SKILLS -->
     <section class="skills section" id="skills">
       <div class="container">
-        <div class="section-header reveal">
-          <p class="section-label">Toolkit</p>
-          <h2 class="section-heading">Tools I <em>work with</em>.</h2>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-item reveal">
-            <div class="skill-icon">
-              <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="4" width="14" height="14" rx="2" fill="currentColor" opacity="0.9"/><rect x="22" y="4" width="14" height="14" rx="2" fill="currentColor" opacity="0.5"/><rect x="4" y="22" width="14" height="14" rx="2" fill="currentColor" opacity="0.5"/><rect x="22" y="22" width="14" height="14" rx="2" fill="currentColor" opacity="0.3"/></svg>
-            </div>
-            <span>Figma</span>
+        <div class="skills__inner">
+          <div class="section__header reveal">
+            <p class="section__label">Toolkit</p>
+            <h2 class="section__heading">Tools I work<br/><em>with daily</em></h2>
           </div>
-          <div class="skill-item reveal">
-            <div class="skill-icon">
-              <svg viewBox="0 0 40 40" fill="none"><path d="M20 4L36 32H4L20 4Z" fill="currentColor" opacity="0.9"/><path d="M20 14L30 32H10L20 14Z" fill="var(--bg-color)"/></svg>
+          <div class="skills__grid reveal">
+            <div class="skill-tag">
+              <span class="skill-tag__icon">✦</span> Figma
             </div>
-            <span>After Effects</span>
-          </div>
-          <div class="skill-item reveal">
-            <div class="skill-icon">
-              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" fill="currentColor" opacity="0.2"/><circle cx="20" cy="20" r="8" fill="currentColor" opacity="0.6"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg>
+            <div class="skill-tag">
+              <span class="skill-tag__icon">✦</span> After Effects
             </div>
-            <span>Photoshop</span>
-          </div>
-          <div class="skill-item reveal">
-            <div class="skill-icon">
-              <svg viewBox="0 0 40 40" fill="none"><path d="M8 8h10v10H8zM22 8h10v10H22zM8 22h10v10H8z" fill="currentColor" opacity="0.7"/><path d="M28 22L36 36H20L28 22Z" fill="currentColor"/></svg>
+            <div class="skill-tag">
+              <span class="skill-tag__icon">✦</span> Photoshop
             </div>
-            <span>Illustrator</span>
-          </div>
-          <div class="skill-item reveal">
-            <div class="skill-icon">
-              <svg viewBox="0 0 40 40" fill="none"><path d="M20 6L34 14v12L20 34 6 26V14L20 6z" fill="currentColor" opacity="0.3"/><path d="M20 12L28 17v10L20 32 12 27V17L20 12z" fill="currentColor" opacity="0.7"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg>
+            <div class="skill-tag">
+              <span class="skill-tag__icon">✦</span> Illustrator
             </div>
-            <span>Blender</span>
-          </div>
-          <div class="skill-item reveal">
-            <div class="skill-icon">
-              <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="12" width="28" height="4" rx="2" fill="currentColor" opacity="0.9"/><rect x="6" y="20" width="20" height="4" rx="2" fill="currentColor" opacity="0.6"/><rect x="6" y="28" width="14" height="4" rx="2" fill="currentColor" opacity="0.3"/></svg>
+            <div class="skill-tag">
+              <span class="skill-tag__icon">✦</span> Blender
             </div>
-            <span>HTML/CSS</span>
-          </div>
-          <div class="skill-item reveal">
-            <div class="skill-icon">
-              <svg viewBox="0 0 40 40" fill="none"><path d="M8 8l8 24M16 8L8 32M24 8v24M32 8l-8 12 8 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.8"/></svg>
+            <div class="skill-tag">
+              <span class="skill-tag__icon">✦</span> HTML / CSS
             </div>
-            <span>Premiere Pro</span>
+            <div class="skill-tag">
+              <span class="skill-tag__icon">✦</span> Premiere Pro
+            </div>
           </div>
         </div>
       </div>
@@ -231,22 +223,22 @@
     <!-- CONTACT -->
     <section class="contact section" id="contact">
       <div class="container">
-        <div class="contact-inner reveal">
-          <p class="section-label">Let's Connect</p>
-          <h2 class="section-heading">Got a project in mind?<br>Let's <em>make it.</em></h2>
-          <p class="contact-sub reveal">I'm always open to new opportunities, collaborations, and creative conversations.</p>
-          <div class="contact-links reveal">
-            <a href="#" class="contact-link">
-              <span class="contact-link-label">Behance</span>
-              <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        <div class="contact__inner reveal">
+          <p class="section__label">Let's Connect</p>
+          <h2 class="contact__heading">Have a project<br/>in mind?<br/><em>Let's talk.</em></h2>
+          <a href="mailto:alex@example.com" class="contact__email">alex@example.com</a>
+          <div class="contact__socials">
+            <a href="#" class="social-link" aria-label="Behance">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.543c-.169-1.603-1.061-1.907-1.78-1.907-.836 0-1.54.54-1.763 1.907zM10.309 7.5c.786 0 1.409.616 1.409 1.377 0 .76-.623 1.377-1.409 1.377-.786 0-1.409-.617-1.409-1.377 0-.76.623-1.377 1.409-1.377zM7.5 12.5c0 .828-.672 1.5-1.5 1.5s-1.5-.672-1.5-1.5S5.172 11 6 11s1.5.672 1.5 1.5zM6 7c2.21 0 4 1.79 4 4 0 .734-.198 1.42-.545 2.006C10.47 13.667 11 14.762 11 16c0 2.761-2.239 5-5 5S1 18.761 1 16c0-1.238.53-2.333 1.545-2.994A3.97 3.97 0 012 11c0-2.21 1.79-4 4-4zm0 8c-.828 0-1.5.672-1.5 1.5S5.172 18 6 18s1.5-.672 1.5-1.5S6.828 15 6 15z"/></svg>
+              Behance
             </a>
-            <a href="#" class="contact-link">
-              <span class="contact-link-label">LinkedIn</span>
-              <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
             </a>
-            <a href="#" class="contact-link">
-              <span class="contact-link-label">Instagram</span>
-              <svg class="contact-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              Instagram
             </a>
           </div>
         </div>
@@ -258,7 +250,11 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-copy">© 2025 Alex Rivera. Designed & built with care.</p>
+      <div class="footer__inner">
+        <span class="footer__logo">AR<span class="dot">.</span></span>
+        <p class="footer__copy">© 2025 Alex Rivera. All rights reserved.</p>
+        <p class="footer__made">Designed &amp; built with intention.</p>
+      </div>
     </div>
   </footer>
 

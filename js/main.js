@@ -1,77 +1,80 @@
-// ============================================
-//  MAIN.JS — Portfolio Interactions
-// ============================================
+/* =============================================
+   ALEX RIVERA PORTFOLIO — main.js
+   ============================================= */
 
-(function () {
-  "use strict";
+// ── Cursor Glow ──────────────────────────────
+const cursorGlow = document.getElementById('cursorGlow');
 
-  // ─── NAV: Scroll + Mobile Toggle ──────────────
-  const nav = document.getElementById("nav");
-  const navToggle = document.getElementById("navToggle");
-  const navLinks = document.querySelector(".nav-links");
+document.addEventListener('mousemove', (e) => {
+  cursorGlow.style.left = e.clientX + 'px';
+  cursorGlow.style.top  = e.clientY + 'px';
+});
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 40) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
+document.addEventListener('mouseleave', () => {
+  cursorGlow.style.opacity = '0';
+});
+document.addEventListener('mouseenter', () => {
+  cursorGlow.style.opacity = '1';
+});
+
+
+// ── Navbar: add .scrolled class on scroll ────
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+}, { passive: true });
+
+
+// ── Mobile burger menu ───────────────────────
+const burger   = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+  // Prevent body scroll when menu is open
+  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+});
+
+// Close menu on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    burger.classList.remove('open');
+    navLinks.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+
+// ── Scroll Reveal via Intersection Observer ──
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Once revealed, stop observing for performance
+      revealObserver.unobserve(entry.target);
     }
-  }, { passive: true });
-
-  navToggle.addEventListener("click", function () {
-    navToggle.classList.toggle("active");
-    navLinks.classList.toggle("open");
   });
+}, {
+  threshold: 0.12,
+  rootMargin: '0px 0px -40px 0px'
+});
 
-  // Close mobile menu when a nav link is clicked
-  navLinks.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      navToggle.classList.remove("active");
-      navLinks.classList.remove("open");
-    });
-  });
+revealElements.forEach(el => revealObserver.observe(el));
 
-  // ─── SCROLL REVEAL via Intersection Observer ──
-  const revealElements = document.querySelectorAll(".reveal");
 
-  const revealObserver = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target); // fire once
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px",
-    }
-  );
+// ── Stagger delays for cards ─────────────────
+document.querySelectorAll('.work__grid .card').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.07}s`;
+});
 
-  revealElements.forEach(function (el, i) {
-    // Stagger siblings within the same parent
-    el.style.transitionDelay = (i % 4) * 0.1 + "s";
-    revealObserver.observe(el);
-  });
-
-  // Override stagger for project cards to keep their own delays
-  document.querySelectorAll(".project-card.reveal").forEach(function (card) {
-    const index = parseInt(card.getAttribute("data-index"), 10) || 0;
-    card.style.transitionDelay = index * 0.08 + "s";
-  });
-
-  // ─── SMOOTH SCROLL for anchor links ───────────
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener("click", function (e) {
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        e.preventDefault();
-        const offset = 80; // nav height buffer
-        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top: top, behavior: "smooth" });
-      }
-    });
-  });
-
-})();
+document.querySelectorAll('.skill-tag').forEach((tag, i) => {
+  tag.style.transitionDelay = `${i * 0.05}s`;
+});
